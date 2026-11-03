@@ -1,0 +1,8 @@
+{
+  "id": "critical-reader",
+  "version": "0.1.0-draft",
+  "entry": "qiyan_c.reading:assess_demo",
+  "scope": "synthetic_fixture_only",
+  "capabilities": {"llm": false, "side_effects": false, "network": false},
+  "note": "Five-stage deterministic fixture. General paper question generation and semantic grading are not implemented."
+}

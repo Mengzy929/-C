@@ -1,0 +1,32 @@
+{
+  "python": "3.14.6",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "tests_run": 43,
+  "failures": 0,
+  "errors": 0,
+  "basic_decision_cases": 120,
+  "random_invariant_cases": 10000,
+  "capability_violations": {},
+  "guard": {
+    "constructed_violations": 20,
+    "caught": 20,
+    "recall": 1.0,
+    "normal_controls": 20,
+    "false_alarms": 0,
+    "limitation": "Constructed development fixtures, not held-out semantic accuracy."
+  },
+  "decision_latency_ms": {
+    "samples": 10000,
+    "warmup": 200,
+    "median": 0.0023,
+    "p99": 0.0025,
+    "includes_io": false
+  },
+  "prompt_utf8_byte_estimates_not_real_model_tokens": {
+    "level_0": 405,
+    "level_1": 402,
+    "level_2": 405,
+    "level_3": 435
+  },
+  "rule_version": "0.1.0-draft"
+}
