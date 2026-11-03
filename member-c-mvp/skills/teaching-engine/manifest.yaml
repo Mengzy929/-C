@@ -1,0 +1,10 @@
+{
+  "id": "teaching-engine",
+  "version": "0.1.0-draft",
+  "api_version": "draft-0.1",
+  "entry": "qiyan_c.teaching:decide",
+  "capabilities": {"llm": false, "side_effects": false, "network": false},
+  "triggers": {"step_types": ["teaching"], "never_on": ["off_topic"]},
+  "budget": {"context_tokens": 900, "latency_ms": 50},
+  "note": "Local entry, not a team SkillRegistry integration. B must resolve teach/teaching. Configuration IO is in qiyan_c.assets, outside the pure core."
+}

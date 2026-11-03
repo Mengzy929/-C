@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>起研 · 阅读练习</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="起研阅读练习首页"><span class="brand-icon">研</span> 起研 <span class="brand-caption">科研思考，从一段原文开始</span></a>
+    <span class="badge">成员 C · 独立演示</span>
+  </header>
+  <main>
+    <div class="intro">
+      <div><p class="eyebrow">READ · QUESTION · RECONSIDER</p><h1>读懂依据，再形成判断。</h1><p class="subtitle">从定位问题到迁移思考，完成一次五步阅读练习。</p></div>
+      <div class="toolbar"><button id="export" class="button subtle" disabled>导出演示记录</button><button id="reset" class="button subtle">新练习</button></div>
+    </div>
+    <p class="notice" id="notice">正在载入本地练习…</p>
+    <div class="error" id="error" role="alert" hidden><span id="error-text"></span><button id="retry" class="button subtle" hidden>重试同一请求</button></div>
+    <ol class="steps" id="steps" aria-label="阅读进度"></ol>
+    <div class="workspace">
+      <section class="panel paper" aria-labelledby="paper-title">
+        <div class="panel-head"><div><p class="eyebrow">SOURCE MATERIAL</p><h2 id="paper-title">原文</h2></div><span class="paper-tag">合成样文</span></div>
+        <p class="panel-description">高亮是本题的定位依据。选择段落，为你的回答绑定来源。</p>
+        <div id="paragraphs"></div>
+        <p class="footnote">所有段落和数字均为教学虚构；没有真实论文或已核验引用。</p>
+      </section>
+      <section class="panel thinking" aria-labelledby="question-title">
+        <div class="panel-head"><div><p class="eyebrow" id="question-step">YOUR THINKING</p><h2 id="question-title">正在准备问题</h2></div><span class="question-index" id="question-index"></span></div>
+        <p class="question" id="question-text"></p>
+        <div class="hint-card" id="hint-card" hidden><span class="card-label">一点提示</span><p id="hint-text"></p></div>
+        <div class="explanation-card" id="explanation-card" hidden><span class="card-label">示例解释 · 看完请重答</span><p id="explanation-text"></p></div>
+        <form id="answer-form">
+          <label for="source">我的原文依据</label>
+          <select id="source"><option value="">请选择一个段落</option></select>
+          <label for="answer">我的理解</label>
+          <textarea id="answer" rows="5" maxlength="4000" placeholder="用自己的话说明判断，并指出它与原文的联系。"></textarea>
+          <p class="field-note">反馈采用示例关键词规则，不代表通用语义理解或能力评价。</p>
+          <div class="actions"><button class="button primary" id="submit" type="submit">提交我的理解 <span aria-hidden="true">↗</span></button><button class="button subtle" id="hint" type="button">给我一点提示</button></div>
+        </form>
+        <div id="feedback" class="feedback" role="status" aria-live="polite" hidden><strong id="feedback-title"></strong><p id="feedback-text"></p></div>
+        <div class="bottom-actions"><button id="explain" class="text-button">我想先查看解释</button><button id="next" class="button primary" disabled>继续下一步 →</button></div>
+        <div id="complete" class="complete" tabindex="-1" hidden><h3>这次阅读练习完成了。</h3><p>你已经走过定位、证据、边界、替代解释与迁移。下方可回看自己的回答变化。</p></div>
+      </section>
+    </div>
+    <section class="reflection panel" aria-labelledby="reflection-title">
+      <div class="panel-head"><div><p class="eyebrow">TRACE YOUR THINKING</p><h2 id="reflection-title">留下思考的变化</h2></div><span id="event-count" class="muted">尚无记录</span></div>
+      <p id="history-empty" class="panel-description">第一次作答后，这里会保留你的判断与反馈。记录不用于能力排名。</p>
+      <div id="history" class="history"></div>
+      <details><summary>查看本次学习事件</summary><ul id="events"></ul></details>
+    </section>
+    <footer>独立模块预览 · 无模型调用 · 未接团队审批、证据、存储或提醒服务</footer>
+  </main>
+  <dialog id="explain-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <h2 id="dialog-title">先看解释，再回来试一次。</h2>
+    <p id="dialog-description">确认后，本题会记为一次放弃独立尝试，并生成 5 天后的复习意向。本演示不会自动提醒，也不会写入正式掌握度。看完解释仍需重新作答。</p>
+    <div class="actions"><button id="cancel-explain" class="button subtle">继续自己想</button><button id="confirm-explain" class="button primary">确认查看解释</button></div>
+  </dialog>
+</body>
+</html>

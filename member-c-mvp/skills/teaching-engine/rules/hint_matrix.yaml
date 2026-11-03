@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0-draft",
+  "note": "Authored v0.1; attempts are completed unsuccessful answers, bucketed 0/1/2/3+. JSON-compatible YAML 1.2. giveup overrides to 3 except off_topic. scaffold is passed through, not a completed fading model.",
+  "penalties": [0, 1, 2, 2],
+  "base": {
+    "understand": {"novice": [1, 1, 1, 1], "guided": [0, 0, 0, 0], "independent": [0, 0, 0, 0]},
+    "locate": {"novice": [1, 1, 1, 1], "guided": [0, 0, 0, 0], "independent": [0, 0, 0, 0]},
+    "evaluate": {"novice": [1, 1, 1, 1], "guided": [1, 1, 1, 1], "independent": [0, 0, 0, 0]},
+    "reflect": {"novice": [1, 1, 1, 1], "guided": [0, 0, 0, 0], "independent": [0, 0, 0, 0]},
+    "off_topic": {"novice": [0, 0, 0, 0], "guided": [0, 0, 0, 0], "independent": [0, 0, 0, 0]}
+  }
+}

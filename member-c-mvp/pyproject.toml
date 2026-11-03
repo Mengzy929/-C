@@ -1,0 +1,10 @@
+[project]
+name = "qiyan-member-c-mvp"
+version = "0.1.0"
+description = "Standalone offline teaching and critical reading modules for member C"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.qiyan-c]
+contract-status = "draft"
+demo-only = true
